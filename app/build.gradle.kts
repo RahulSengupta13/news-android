@@ -63,6 +63,10 @@ dependencies {
     implementation(Libs.navigation_fragment_ktx)
     implementation(Libs.navigation_ui_ktx)
 
+    implementation("androidx.room:room-runtime:2.1.0")
+    implementation("androidx.room:room-ktx:2.1.0")
+    kapt("androidx.room:room-compiler:2.1.0")
+
     /*DI*/
     implementation("org.koin:koin-android:2.0.1")
     implementation("org.koin:koin-android-viewmodel:2.0.1")

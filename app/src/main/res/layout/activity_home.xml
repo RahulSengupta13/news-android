@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="me.rahulsengupta.news.home.ui.HomeActivity">
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="me.rahulsengupta.news.NewsActivity">
+
+    <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:labelVisibilityMode="unlabeled"
+            app:itemHorizontalTranslationEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:elevation="16dp"
+            app:backgroundTint="@color/offWhite"
+            android:theme="@style/Widget.BottomNavigationView"
+            app:itemIconTint="@color/nav_view_ripple"
+            app:layout_constraintTop_toBottomOf="@id/nav_host_fragment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/bottom_navigation_menu"
+            android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
