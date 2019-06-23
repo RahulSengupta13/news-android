@@ -35,6 +35,8 @@ androidExtensions {
 }
 
 dependencies {
+    implementation(project(":network"))
+
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     implementation(Libs.kotlin_stdlib_jdk7)
@@ -48,6 +50,12 @@ dependencies {
     implementation(Libs.lifecycle_extensions)
     implementation(Libs.android_arch_paging_runtime)
 
+    implementation(Libs.okhttp)
+    implementation(Libs.gson)
+    implementation(Libs.retrofit)
+    implementation(Libs.logging_interceptor)
+    implementation(Libs.converter_gson)
+
     implementation(Libs.constraintlayout)
     implementation(Libs.material)
     implementation(Libs.recyclerview)
@@ -55,12 +63,11 @@ dependencies {
     implementation(Libs.navigation_fragment_ktx)
     implementation(Libs.navigation_ui_ktx)
 
-    implementation(Libs.okhttp)
+    /*DI*/
+    implementation("org.koin:koin-android:2.0.1")
+    implementation("org.koin:koin-android-viewmodel:2.0.1")
+
     implementation(Libs.picasso)
-    implementation(Libs.gson)
-    implementation(Libs.retrofit)
-    implementation(Libs.logging_interceptor)
-    implementation(Libs.converter_gson)
     implementation(Libs.retrofit2_kotlin_coroutines_adapter)
 
     testImplementation(Libs.core_testing)

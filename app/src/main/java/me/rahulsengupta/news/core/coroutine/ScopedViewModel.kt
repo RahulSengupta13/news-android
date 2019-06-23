@@ -1,14 +1,13 @@
 package me.rahulsengupta.news.core.coroutine
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import timber.log.Timber
 
-open class ScopedViewModel(application: Application) : AndroidViewModel(application) {
+open class ScopedViewModel : ViewModel() {
 
     private val coroutineExceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
         Timber.e(throwable)
