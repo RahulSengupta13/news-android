@@ -4,7 +4,7 @@ import me.rahulsengupta.network.CountryEndpoints
 import me.rahulsengupta.network.NewsEndpoints
 import me.rahulsengupta.network.responses.CountryResponse
 import me.rahulsengupta.news.core.retrofit.getRetrofitResult
-import me.rahulsengupta.news.core.retrofit.models.RetrofitResult
+import me.rahulsengupta.news.core.retrofit.RetrofitResult
 
 interface HomeApi {
     fun getCountryList(): RetrofitResult<List<CountryResponse>>

@@ -4,7 +4,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import me.rahulsengupta.news.core.coroutine.ScopedViewModel
 
-class HomeAvm(homeApi: HomeApi) : ScopedViewModel() {
+class HomeAvm : ScopedViewModel() {
 
     private val logic: HomeLogic
 
@@ -12,7 +12,7 @@ class HomeAvm(homeApi: HomeApi) : ScopedViewModel() {
         val listener = object : HomeLogic.Listener {
 
         }
-        logic = HomeLogic(listener, homeApi)
+        logic = HomeLogic(listener)
     }
 
     fun setup() {

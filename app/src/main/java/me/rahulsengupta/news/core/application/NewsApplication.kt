@@ -1,8 +1,8 @@
 package me.rahulsengupta.news.core.application
 
 import android.app.Application
-import me.rahulsengupta.news.core.di.appModule
-import me.rahulsengupta.news.core.di.homeActivityModule
+import me.rahulsengupta.news.core.di.DependencyInjectionModules.appModule
+import me.rahulsengupta.news.core.di.DependencyInjectionModules.homeActivityModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -12,11 +12,20 @@ class NewsApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
         Timber.plant(Timber.DebugTree())
+
+        /*DI setup*/
         startKoin {
             androidLogger()
             androidContext(this@NewsApplication)
-            modules(listOf(appModule, homeActivityModule))
+
+            modules(
+                listOf(
+                    appModule,
+                    homeActivityModule
+                )
+            )
         }
     }
 }

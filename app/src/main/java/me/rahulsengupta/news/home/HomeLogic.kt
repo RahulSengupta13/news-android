@@ -1,11 +1,15 @@
 package me.rahulsengupta.news.home
 
-import me.rahulsengupta.news.core.retrofit.models.RetrofitResult
+import me.rahulsengupta.news.core.logic.BaseLogic
+import me.rahulsengupta.news.core.retrofit.RetrofitResult
+import org.koin.core.inject
 import timber.log.Timber
 
-class HomeLogic(listener: Listener, private val homeApi: HomeApi) {
+class HomeLogic(listener: Listener) : BaseLogic() {
 
     interface Listener
+
+    private val homeApi: HomeApi by inject()
 
     fun setup() {
         when (val response = homeApi.getCountryList()) {
