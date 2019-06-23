@@ -1,0 +1,247 @@
+{
+    "current": {
+        "dependencies": [
+            {
+                "group": "android.arch.navigation",
+                "version": "1.0.0",
+                "projectUrl": "https://developer.android.com/topic/libraries/architecture/index.html",
+                "name": "navigation-fragment-ktx"
+            },
+            {
+                "group": "android.arch.navigation",
+                "version": "1.0.0",
+                "projectUrl": "https://developer.android.com/topic/libraries/architecture/index.html",
+                "name": "navigation-ui-ktx"
+            },
+            {
+                "group": "android.arch.paging",
+                "version": "1.0.1",
+                "projectUrl": "https://developer.android.com/topic/libraries/architecture/index.html",
+                "name": "runtime"
+            },
+            {
+                "group": "androidx.arch.core",
+                "version": "2.0.1",
+                "projectUrl": "https://developer.android.com/topic/libraries/architecture/index.html",
+                "name": "core-testing"
+            },
+            {
+                "group": "androidx.constraintlayout",
+                "version": "1.1.3",
+                "projectUrl": "http://tools.android.com",
+                "name": "constraintlayout"
+            },
+            {
+                "group": "androidx.lifecycle",
+                "version": "2.0.0",
+                "projectUrl": "https://developer.android.com/topic/libraries/architecture/index.html",
+                "name": "lifecycle-common"
+            },
+            {
+                "group": "androidx.lifecycle",
+                "version": "2.0.0",
+                "projectUrl": "https://developer.android.com/topic/libraries/architecture/index.html",
+                "name": "lifecycle-extensions"
+            },
+            {
+                "group": "androidx.lifecycle",
+                "version": "2.0.0",
+                "projectUrl": "https://developer.android.com/topic/libraries/architecture/index.html",
+                "name": "lifecycle-runtime"
+            },
+            {
+                "group": "androidx.recyclerview",
+                "version": "1.0.0",
+                "projectUrl": "http://developer.android.com/tools/extras/support-library.html",
+                "name": "recyclerview"
+            },
+            {
+                "group": "androidx.test",
+                "version": "1.2.0",
+                "projectUrl": "https://developer.android.com/testing",
+                "name": "runner"
+            },
+            {
+                "group": "com.android.tools.build",
+                "version": "3.4.1",
+                "projectUrl": "https://developer.android.com/studio",
+                "name": "gradle"
+            },
+            {
+                "group": "com.android.tools.lint",
+                "version": "26.4.1",
+                "projectUrl": "https://developer.android.com/studio",
+                "name": "lint-gradle"
+            },
+            {
+                "group": "com.google.code.gson",
+                "version": "2.8.5",
+                "projectUrl": "https://github.com/google/gson",
+                "name": "gson"
+            },
+            {
+                "group": "com.jakewharton.retrofit",
+                "version": "0.9.2",
+                "projectUrl": "https://github.com/JakeWharton/retrofit2-kotlin-coroutines-adapter/",
+                "name": "retrofit2-kotlin-coroutines-adapter"
+            },
+            {
+                "group": "com.jakewharton.timber",
+                "version": "4.7.1",
+                "projectUrl": "https://github.com/JakeWharton/timber",
+                "name": "timber"
+            },
+            {
+                "group": "com.squareup.okhttp3",
+                "version": "3.14.2",
+                "projectUrl": "https://github.com/square/okhttp",
+                "name": "logging-interceptor"
+            },
+            {
+                "group": "com.squareup.okhttp3",
+                "version": "3.14.2",
+                "projectUrl": "https://github.com/square/okhttp",
+                "name": "okhttp"
+            },
+            {
+                "group": "com.squareup.picasso",
+                "version": "2.71828",
+                "projectUrl": "https://github.com/square/picasso/",
+                "name": "picasso"
+            },
+            {
+                "group": "com.squareup.retrofit2",
+                "version": "2.6.0",
+                "projectUrl": "https://github.com/square/retrofit/",
+                "name": "converter-gson"
+            },
+            {
+                "group": "com.squareup.retrofit2",
+                "version": "2.6.0",
+                "projectUrl": "https://github.com/square/retrofit/",
+                "name": "retrofit"
+            },
+            {
+                "group": "de.fayard.buildSrcVersions",
+                "version": "0.3.2",
+                "projectUrl": null,
+                "name": "de.fayard.buildSrcVersions.gradle.plugin"
+            },
+            {
+                "group": "junit",
+                "version": "4.12",
+                "projectUrl": "http://junit.org",
+                "name": "junit"
+            },
+            {
+                "group": "org.jetbrains.kotlin",
+                "version": "1.3.40",
+                "projectUrl": "https://kotlinlang.org/",
+                "name": "kotlin-android-extensions"
+            },
+            {
+                "group": "org.jetbrains.kotlin",
+                "version": "1.3.40",
+                "projectUrl": "https://kotlinlang.org/",
+                "name": "kotlin-android-extensions-runtime"
+            },
+            {
+                "group": "org.jetbrains.kotlin",
+                "version": "1.3.40",
+                "projectUrl": "https://kotlinlang.org/",
+                "name": "kotlin-annotation-processing-gradle"
+            },
+            {
+                "group": "org.jetbrains.kotlin",
+                "version": "1.3.40",
+                "projectUrl": "https://kotlinlang.org/",
+                "name": "kotlin-gradle-plugin"
+            },
+            {
+                "group": "org.jetbrains.kotlin",
+                "version": "1.3.40",
+                "projectUrl": "https://kotlinlang.org/",
+                "name": "kotlin-stdlib-jdk7"
+            },
+            {
+                "group": "org.jetbrains.kotlinx",
+                "version": "1.2.2",
+                "projectUrl": "https://github.com/Kotlin/kotlinx.coroutines",
+                "name": "kotlinx-coroutines-android"
+            },
+            {
+                "group": "org.jetbrains.kotlinx",
+                "version": "1.2.2",
+                "projectUrl": "https://github.com/Kotlin/kotlinx.coroutines",
+                "name": "kotlinx-coroutines-core"
+            }
+        ],
+        "count": 29
+    },
+    "gradle": {
+        "current": {
+            "version": "5.4.1",
+            "reason": "",
+            "isUpdateAvailable": true,
+            "isFailure": false
+        },
+        "nightly": {
+            "version": "5.6-20190623000042+0000",
+            "reason": "",
+            "isUpdateAvailable": true,
+            "isFailure": false
+        },
+        "enabled": true,
+        "releaseCandidate": {
+            "version": "5.5-rc-3",
+            "reason": "",
+            "isUpdateAvailable": true,
+            "isFailure": false
+        },
+        "running": {
+            "version": "5.1.1",
+            "reason": "",
+            "isUpdateAvailable": false,
+            "isFailure": false
+        }
+    },
+    "exceeded": {
+        "dependencies": [
+            {
+                "group": "androidx.appcompat",
+                "latest": "1.0.2",
+                "version": "1.1.0-alpha03",
+                "projectUrl": "http://developer.android.com/tools/extras/support-library.html",
+                "name": "appcompat"
+            },
+            {
+                "group": "androidx.core",
+                "latest": "1.0.2",
+                "version": "1.1.0-alpha04",
+                "projectUrl": "http://developer.android.com/tools/extras/support-library.html",
+                "name": "core-ktx"
+            },
+            {
+                "group": "com.google.android.material",
+                "latest": "1.0.0",
+                "version": "1.1.0-alpha07",
+                "projectUrl": "http://developer.android.com/tools/extras/support-library.html",
+                "name": "material"
+            }
+        ],
+        "count": 3
+    },
+    "outdated": {
+        "dependencies": [
+            
+        ],
+        "count": 0
+    },
+    "unresolved": {
+        "dependencies": [
+            
+        ],
+        "count": 0
+    },
+    "count": 32
+}
