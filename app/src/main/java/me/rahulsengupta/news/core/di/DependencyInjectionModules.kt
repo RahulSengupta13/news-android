@@ -19,7 +19,7 @@ import org.koin.dsl.module
 object DependencyInjectionModules {
 
     val homeFragment = module {
-        single<HomeApi> { HomeApiImpl(get()) }
+        single<HomeApi> { HomeApiImpl() }
         viewModel { HomeAvm() }
     }
 

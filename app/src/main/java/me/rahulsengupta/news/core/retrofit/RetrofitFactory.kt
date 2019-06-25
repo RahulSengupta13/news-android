@@ -4,6 +4,7 @@ import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import me.rahulsengupta.network.CountryEndpoints
 import me.rahulsengupta.network.NewsEndpoints
+import me.rahulsengupta.news.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -44,7 +45,10 @@ object RetrofitFactory {
             val request = chain.request()
             val originalHttpUrl = request.url()
 
-            val url = originalHttpUrl.newBuilder().build()
+            val url = originalHttpUrl
+                .newBuilder()
+                .addQueryParameter("apiKey", BuildConfig.NewsOrgApiKey)
+                .build()
 
             val requestBuilder = request.newBuilder().url(url)
             chain.proceed(requestBuilder.build())

@@ -19,9 +19,13 @@ android {
         getByName("release") {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+
+            val News_NewsOrg_ApiKey: String by project
+            buildConfigField("String", "NewsOrgApiKey", News_NewsOrg_ApiKey)
         }
         getByName("debug") {
-
+            val News_NewsOrg_ApiKey: String by project
+            buildConfigField("String", "NewsOrgApiKey", News_NewsOrg_ApiKey)
         }
     }
     compileOptions {
