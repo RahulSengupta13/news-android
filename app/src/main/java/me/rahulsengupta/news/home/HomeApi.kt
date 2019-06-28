@@ -8,13 +8,13 @@ import org.koin.core.KoinComponent
 import org.koin.core.inject
 
 interface HomeApi {
-    fun getTopHeadlines(country: String?): RetrofitResult<TopHeadlinesResponse>
+    fun getTopHeadlines(page: Int, pageSize: Int, country: String? = "us"): RetrofitResult<TopHeadlinesResponse>
 }
 
 class HomeApiImpl : HomeApi, KoinComponent {
 
     private val newsEndpoints: NewsEndpoints by inject()
 
-    override fun getTopHeadlines(country: String?): RetrofitResult<TopHeadlinesResponse> =
-        newsEndpoints.getTopHeadlines(country).getRetrofitResult()
+    override fun getTopHeadlines(page: Int, pageSize: Int, country: String?): RetrofitResult<TopHeadlinesResponse> =
+        newsEndpoints.getTopHeadlines(page, pageSize, country).getRetrofitResult()
 }

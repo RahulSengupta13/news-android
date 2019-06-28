@@ -2,6 +2,7 @@ package me.rahulsengupta.news.core.application
 
 import android.app.Application
 import me.rahulsengupta.news.core.di.DependencyInjectionModules.appModule
+import me.rahulsengupta.news.core.di.DependencyInjectionModules.countryModule
 import me.rahulsengupta.news.core.di.DependencyInjectionModules.homeFragment
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -23,6 +24,7 @@ class NewsApplication : Application() {
             modules(
                 listOf(
                     appModule,
+                    countryModule,
                     homeFragment
                 )
             )

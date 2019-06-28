@@ -9,7 +9,7 @@ import timber.log.Timber
 
 open class ScopedViewModel : ViewModel() {
 
-    private val coroutineExceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
+    private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         Timber.e(throwable)
     }
 

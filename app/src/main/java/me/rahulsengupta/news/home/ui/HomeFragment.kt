@@ -13,24 +13,31 @@ import me.rahulsengupta.news.home.HomeAvm
 import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), HomePresenter.Listener {
 
     private val homeAvm: HomeAvm by viewModel()
     private val countryRepository: ICountryRepository by inject()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
-    }
+    private lateinit var _presenterContainer: HomePresenter.Container
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val root = inflater.inflate(R.layout.fragment_home, container, false)
+
+        _presenterContainer = HomePresenter.Container(root, this)
 
         countryRepository.getCountries().observe(this, Observer {
             Toast.makeText(context, "${it.size}", Toast.LENGTH_SHORT).show()
         })
+        homeAvm.topHeadlinesPagedList()
+            .observe(this, Observer { HomePresenter.presentTopHeadlines(_presenterContainer, it) })
 
         countryRepository.fetchCountries()
         homeAvm.setup()
+
+        return root
     }
 
+    override fun onSwipeToRefresh() {
+        homeAvm.onSwipeToRefresh()
+    }
 }

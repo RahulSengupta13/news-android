@@ -75,6 +75,8 @@ dependencies {
     implementation("org.koin:koin-android:2.0.1")
     implementation("org.koin:koin-android-viewmodel:2.0.1")
 
+    implementation("android.arch.paging:runtime:1.0.1")
+
     implementation(Libs.picasso)
     implementation(Libs.retrofit2_kotlin_coroutines_adapter)
 

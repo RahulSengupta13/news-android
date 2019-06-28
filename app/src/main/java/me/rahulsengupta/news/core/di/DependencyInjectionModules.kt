@@ -27,6 +27,9 @@ object DependencyInjectionModules {
         single { createCountryRetrofitClient() }
         single { createNewsRetrofitClient() }
         single { initializeDatabase(get()) }
+    }
+
+    val countryModule = module {
         single<ICountryListApi> { CountryListApi(get()) }
         single<ICountryListDb> { CountryListDb(get<NewsDb>().countryListDao()) }
         single<ICountryRepository> { CountryRepository(get()) }

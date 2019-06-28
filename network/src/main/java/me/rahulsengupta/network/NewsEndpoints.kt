@@ -8,5 +8,9 @@ import retrofit2.http.Query
 interface NewsEndpoints {
 
     @GET("top-headlines")
-    fun getTopHeadlines(@Query("country") country: String? = null): Call<TopHeadlinesResponse>
+    fun getTopHeadlines(
+        @Query("page") page: Int,
+        @Query("pageSize") pageSize: Int,
+        @Query("country") country: String? = null
+    ): Call<TopHeadlinesResponse>
 }
