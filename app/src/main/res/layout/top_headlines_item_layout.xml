@@ -5,6 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
+        android:id="@+id/news_root"
         app:cardBackgroundColor="@color/offWhite"
         app:cardUseCompatPadding="true"
         app:cardCornerRadius="@dimen/margin_small"
@@ -46,6 +47,7 @@
                 android:layout_width="0dp"
                 android:layout_marginTop="@dimen/margin_medium"
                 android:fontFamily="sans-serif-light"
+                android:textColor="@color/colorPrimary"
                 tools:text="News Title"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 android:layout_height="wrap_content"/>
@@ -62,5 +64,32 @@
                 tools:text="Description"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/news_description"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                android:orientation="horizontal">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/news_image_source_icon"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    app:civ_border_color="@color/blue"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    app:civ_border_width="1dp"/>
+
+            <TextView
+                    android:id="@+id/news_published_at"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/gray"
+                    android:fontFamily="sans-serif-light"
+                    tools:text="2019-02-12"
+                    android:textAppearance="?attr/textAppearanceOverline"
+                    android:layout_height="wrap_content"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

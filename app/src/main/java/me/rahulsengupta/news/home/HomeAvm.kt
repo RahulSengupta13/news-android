@@ -9,6 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import me.rahulsengupta.news.core.coroutine.ScopedViewModel
 import me.rahulsengupta.news.home.models.NewsViewModel
+import me.rahulsengupta.news.home.models.SourceIconPayload
 import me.rahulsengupta.news.home.models.TopHeadlinesDataSource.Companion.PAGE_SIZE
 import me.rahulsengupta.news.home.models.TopHeadlinesFactory
 
@@ -18,10 +19,11 @@ class HomeAvm : ScopedViewModel() {
 
     private val _topHeadlinesPagedListSource: MutableLiveData<PageKeyedDataSource<Int, NewsViewModel>>
     private val _topHeadlinesPagedList: LiveData<PagedList<NewsViewModel>>
+    private val _setSourceIcon = MutableLiveData<SourceIconPayload>()
 
     init {
         val listener = object : HomeLogic.Listener {
-
+            override fun setSourceIcon(sourceIconPayload: SourceIconPayload) = _setSourceIcon.postValue(sourceIconPayload)
         }
         _logic = HomeLogic(listener)
 
@@ -39,6 +41,7 @@ class HomeAvm : ScopedViewModel() {
      * Observables
      * */
     fun topHeadlinesPagedList() = _topHeadlinesPagedList
+    fun setSourceIcon() = _setSourceIcon
 
     /**
      * Actionables
@@ -46,6 +49,8 @@ class HomeAvm : ScopedViewModel() {
     fun setup() {
         coroutineScope.launch(Dispatchers.IO) { _logic.setup() }
     }
-
+    fun loadSourceImage(sourceDomain: String, sourceId: String?, position: Int) {
+        coroutineScope.launch(Dispatchers.IO) { _logic.loadSourceImage(sourceDomain, sourceId, position) }
+    }
     fun onSwipeToRefresh() = _topHeadlinesPagedListSource.value?.invalidate()
 }

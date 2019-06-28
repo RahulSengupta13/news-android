@@ -9,11 +9,13 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import me.rahulsengupta.news.R
 import me.rahulsengupta.news.home.models.NewsViewModel
+import me.rahulsengupta.news.home.models.SourceIconPayload
 
 class HomePresenter {
 
     interface Listener {
         fun onSwipeToRefresh()
+        fun loadSourceImage(sourceDomain: String, sourceId: String?, position: Int)
     }
 
     class Container(root: View, listener: Listener) {
@@ -41,6 +43,12 @@ class HomePresenter {
         fun presentTopHeadlines(container: Container, topHeadlines: PagedList<NewsViewModel>) {
             container.topHeadlinesAdapter.submitList(topHeadlines)
             container.swipeToRefresh.isRefreshing = false
+        }
+
+        fun setSourceIcon(container: Container, it: SourceIconPayload?) {
+            it?.sourcePosition?.let { position ->
+                container.topHeadlinesAdapter.loadSourceImage(it.sourceIconUrl, position)
+            }
         }
     }
 }

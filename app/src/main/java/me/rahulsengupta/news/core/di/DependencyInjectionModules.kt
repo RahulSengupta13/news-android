@@ -9,10 +9,9 @@ import me.rahulsengupta.news.core.repository.countrylist.CountryRepository
 import me.rahulsengupta.news.core.repository.countrylist.ICountryListApi
 import me.rahulsengupta.news.core.repository.countrylist.ICountryRepository
 import me.rahulsengupta.news.core.retrofit.RetrofitFactory.createCountryRetrofitClient
+import me.rahulsengupta.news.core.retrofit.RetrofitFactory.createIconFinderRetrofitClient
 import me.rahulsengupta.news.core.retrofit.RetrofitFactory.createNewsRetrofitClient
-import me.rahulsengupta.news.home.HomeApi
-import me.rahulsengupta.news.home.HomeApiImpl
-import me.rahulsengupta.news.home.HomeAvm
+import me.rahulsengupta.news.home.*
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -20,6 +19,7 @@ object DependencyInjectionModules {
 
     val homeFragment = module {
         single<HomeApi> { HomeApiImpl() }
+        single<IconFinderApi> { IconFinderApiImpl() }
         viewModel { HomeAvm() }
     }
 
@@ -27,6 +27,7 @@ object DependencyInjectionModules {
         single { createCountryRetrofitClient() }
         single { createNewsRetrofitClient() }
         single { initializeDatabase(get()) }
+        single { createIconFinderRetrofitClient() }
     }
 
     val countryModule = module {

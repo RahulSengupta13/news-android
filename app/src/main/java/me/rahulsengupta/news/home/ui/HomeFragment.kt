@@ -30,11 +30,18 @@ class HomeFragment : Fragment(), HomePresenter.Listener {
         })
         homeAvm.topHeadlinesPagedList()
             .observe(this, Observer { HomePresenter.presentTopHeadlines(_presenterContainer, it) })
+        homeAvm.setSourceIcon().observe(this, Observer {
+            HomePresenter.setSourceIcon(_presenterContainer, it)
+        })
 
         countryRepository.fetchCountries()
         homeAvm.setup()
 
         return root
+    }
+
+    override fun loadSourceImage(sourceDomain: String, sourceId: String?, position: Int) {
+        homeAvm.loadSourceImage(sourceDomain, sourceId, position)
     }
 
     override fun onSwipeToRefresh() {

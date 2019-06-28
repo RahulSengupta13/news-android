@@ -3,6 +3,7 @@ package me.rahulsengupta.news.core.retrofit
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import me.rahulsengupta.network.CountryEndpoints
+import me.rahulsengupta.network.IconFinderEndpoints
 import me.rahulsengupta.network.NewsEndpoints
 import me.rahulsengupta.news.BuildConfig
 import okhttp3.Interceptor
@@ -15,6 +16,7 @@ object RetrofitFactory {
 
     private const val BASE_COUNTRY_URL = "https://restcountries.eu/rest/v2/"
     private const val BASE_NEWS_URL = "https://newsapi.org/v2/"
+    private const val BASE_ICON_FINDER_URL = "https://besticon-demo.herokuapp.com/"
 
     fun createCountryRetrofitClient(): CountryEndpoints {
         val okHttpClient = OkHttpClient.Builder()
@@ -66,5 +68,25 @@ object RetrofitFactory {
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
             .create(NewsEndpoints::class.java)
+    }
+
+    fun createIconFinderRetrofitClient(): IconFinderEndpoints {
+        val okHttpClient = OkHttpClient.Builder()
+
+        val loggingInterceptor = HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        }
+
+        okHttpClient.apply {
+            addInterceptor(loggingInterceptor)
+        }
+
+        return Retrofit.Builder()
+            .baseUrl(BASE_ICON_FINDER_URL)
+            .client(okHttpClient.build())
+            .addConverterFactory(GsonConverterFactory.create(GsonBuilder().disableHtmlEscaping().create()))
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
+            .build()
+            .create(IconFinderEndpoints::class.java)
     }
 }

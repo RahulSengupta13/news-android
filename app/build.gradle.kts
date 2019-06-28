@@ -76,6 +76,8 @@ dependencies {
     implementation("org.koin:koin-android-viewmodel:2.0.1")
 
     implementation("android.arch.paging:runtime:1.0.1")
+    implementation("com.mikhaellopez:circularimageview:4.0.1")
+    implementation("joda-time:joda-time:2.10.2")
 
     implementation(Libs.picasso)
     implementation(Libs.retrofit2_kotlin_coroutines_adapter)
