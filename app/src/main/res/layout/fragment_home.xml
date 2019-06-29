@@ -1,84 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/offWhite"
-        android:id="@+id/home_fragment_root"
-        tools:context=".home.ui.HomeFragment">
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main_content" android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/start_guideline"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="@dimen/margin_medium"/>
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/id_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
 
-    <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/end_guideline"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="@dimen/margin_medium"/>
-
-    <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_layout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:tabMode="auto"
-            app:tabBackground="@color/offWhite"
-            android:elevation="@dimen/default_elevation"
-            app:tabUnboundedRipple="false"
-            android:background="@color/offWhite"
-            app:tabTextColor="@color/blue_gray_tab_selector"
-            app:tabIndicatorColor="@color/blue_gray_tab_selector"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tabTextAppearance="@style/TabTextStyle"
-            app:tabIndicatorFullWidth="false"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content">
-
-        <com.google.android.material.tabs.TabItem
-                android:text="@string/headlines"
-                android:id="@+id/tab_headlines"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        <com.google.android.material.tabs.TabItem
-                android:text="@string/science"
-                android:id="@+id/tab_science"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        <com.google.android.material.tabs.TabItem
-                android:text="@string/technology"
-                android:id="@+id/tab_technology"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        <com.google.android.material.tabs.TabItem
-                android:text="@string/add_more"
-                android:id="@+id/tab_add_more"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-    </com.google.android.material.tabs.TabLayout>
-
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/swipe_refresh"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintStart_toStartOf="@id/start_guideline"
-            app:layout_constraintEnd_toEndOf="@id/end_guideline"
-            app:layout_constraintTop_toBottomOf="@id/tab_layout"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/top_headlines_recycler_view"
+        <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                app:tabMode="auto"
+                app:tabBackground="@color/offWhite"
+                android:elevation="@dimen/default_elevation"
+                app:tabUnboundedRipple="false"
+                android:background="@color/offWhite"
+                app:tabTextColor="@color/blue_gray_tab_selector"
+                app:tabIndicatorColor="@color/blue_gray_tab_selector"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tabTextAppearance="@style/TabTextStyle"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:tabIndicatorFullWidth="false"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layoutAnimation="@anim/grid_layout_top_to_bottom"
-                android:scrollbars="none"/>
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_height="wrap_content">
+
+            <com.google.android.material.tabs.TabItem
+                    android:text="@string/headlines"
+                    android:id="@+id/tab_headlines"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <com.google.android.material.tabs.TabItem
+                    android:text="@string/science"
+                    android:id="@+id/tab_science"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <com.google.android.material.tabs.TabItem
+                    android:text="@string/technology"
+                    android:id="@+id/tab_technology"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <com.google.android.material.tabs.TabItem
+                    android:text="@string/add_more"
+                    android:id="@+id/tab_add_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </com.google.android.material.tabs.TabLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/offWhite"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:id="@+id/home_fragment_root"
+            tools:context=".home.ui.HomeFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/start_guideline"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/margin_medium"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end_guideline"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/margin_medium"/>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/top_headlines_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"/>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

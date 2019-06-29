@@ -2,6 +2,7 @@ package me.rahulsengupta.news.home
 
 import me.rahulsengupta.network.responses.TopHeadlinesResponse
 import me.rahulsengupta.news.core.logic.BaseLogic
+import me.rahulsengupta.news.core.repository.sharedprefs.ISharedPrefsRepository
 import me.rahulsengupta.news.core.retrofit.RetrofitResult
 import me.rahulsengupta.news.home.api.HomeApi
 import me.rahulsengupta.news.home.api.IconFinderApi
@@ -21,6 +22,7 @@ class HomeLogic(private val listener: Listener) : BaseLogic() {
 
     private val homeApi: HomeApi by inject()
     private val iconFinderApi: IconFinderApi by inject()
+    private val prefsRepository: ISharedPrefsRepository by inject()
     private var homeState = HomeState()
 
     fun setup() {
@@ -31,6 +33,10 @@ class HomeLogic(private val listener: Listener) : BaseLogic() {
                 }
                 is RetrofitResult.ErrorResult -> Unit
             }
+        }
+
+        if (prefsRepository.getSavedCountry() == null) {
+            prefsRepository.setSavedCountry("us")
         }
     }
 

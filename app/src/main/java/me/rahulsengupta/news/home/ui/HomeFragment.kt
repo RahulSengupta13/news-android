@@ -4,15 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import me.rahulsengupta.news.R
 import me.rahulsengupta.news.core.repository.countrylist.ICountryRepository
+import me.rahulsengupta.news.core.ui.BaseFragment
 import me.rahulsengupta.news.home.HomeAvm
 import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class HomeFragment : Fragment(), HomePresenter.Listener {
+class HomeFragment : BaseFragment(), HomePresenter.Listener {
 
     private val homeAvm: HomeAvm by viewModel()
     private val countryRepository: ICountryRepository by inject()

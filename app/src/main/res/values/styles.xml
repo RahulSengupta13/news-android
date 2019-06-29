@@ -15,7 +15,7 @@
 
     <style name="TabTextStyle">
         <item name="android:textSize">14sp</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif</item>
         <item name="android:textAllCaps">true</item>
     </style>
 

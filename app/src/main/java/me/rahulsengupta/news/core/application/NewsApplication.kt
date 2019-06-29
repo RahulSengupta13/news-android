@@ -3,7 +3,8 @@ package me.rahulsengupta.news.core.application
 import android.app.Application
 import me.rahulsengupta.news.core.di.DependencyInjectionModules.appModule
 import me.rahulsengupta.news.core.di.DependencyInjectionModules.countryModule
-import me.rahulsengupta.news.core.di.DependencyInjectionModules.homeFragment
+import me.rahulsengupta.news.core.di.DependencyInjectionModules.homeFragmentModule
+import me.rahulsengupta.news.core.di.DependencyInjectionModules.settingsFragmentModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -25,7 +26,8 @@ class NewsApplication : Application() {
                 listOf(
                     appModule,
                     countryModule,
-                    homeFragment
+                    homeFragmentModule,
+                    settingsFragmentModule
                 )
             )
         }
