@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import me.rahulsengupta.news.R
@@ -25,9 +24,6 @@ class HomeFragment : Fragment(), HomePresenter.Listener {
 
         _presenterContainer = HomePresenter.Container(root, this)
 
-        countryRepository.getCountries().observe(this, Observer {
-            Toast.makeText(context, "${it.size}", Toast.LENGTH_SHORT).show()
-        })
         homeAvm.topHeadlinesPagedList()
             .observe(this, Observer { HomePresenter.presentTopHeadlines(_presenterContainer, it) })
         homeAvm.setSourceIcon().observe(this, Observer {

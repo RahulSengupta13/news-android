@@ -7,7 +7,7 @@ import kotlin.String
  *
  * YOU are responsible for updating manually the dependency version. */
 object Versions {
-    const val android_arch_navigation: String = "1.0.0" 
+    const val android_arch_navigation: String = "2.1.0-alpha05"
 
     const val android_arch_paging_runtime: String = "1.0.1" 
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-            android:id="@+id/navigation_home"
+            android:id="@+id/homeFragment"
             android:icon="@drawable/bottom_nav_view_home_selector"
             android:title="@string/home" />
     <item
@@ -9,7 +9,7 @@
             android:icon="@drawable/bottom_nav_view_search_selector"
             android:title="@string/search" />
     <item
-            android:id="@+id/navigation_settings"
+            android:id="@+id/settingsFragment"
             android:icon="@drawable/bottom_nav_view_settings_selector"
             android:title="@string/settings" />
 </menu>

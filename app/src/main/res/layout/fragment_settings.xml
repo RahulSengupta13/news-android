@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:background="@color/offWhite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_guideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/margin_medium"/>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/margin_medium"/>
+
+    <com.google.android.material.appbar.MaterialToolbar
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/toolbar_settings"
+            app:titleTextAppearance="@style/ToolbarTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <View
+            android:id="@+id/settings_country_view"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintTop_toTopOf="@id/settings_country_title"
+            app:layout_constraintBottom_toBottomOf="@id/settings_country_description"
+            android:background="@drawable/gray_ripple"
+            android:layout_width="match_parent"
+            android:padding="@dimen/margin_small"
+            android:layout_height="0dp"/>
+
+    <TextView
+            android:id="@+id/settings_country_title"
+            android:layout_width="0dp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/country"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_settings"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:paddingTop="@dimen/margin_medium"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/settings_country_description"
+            android:layout_width="0dp"
+            android:fontFamily="sans-serif-light"
+            android:paddingBottom="@dimen/margin_medium"
+            android:textColor="@color/gray"
+            android:text="@string/settings_country_description"
+            android:textAppearance="?attr/textAppearanceBody2"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintEnd_toStartOf="@id/settings_country_icon"
+            app:layout_constraintTop_toBottomOf="@id/settings_country_title"
+            android:layout_height="wrap_content"/>
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/settings_country_icon"
+            app:layout_constraintTop_toTopOf="@id/settings_country_title"
+            app:layout_constraintBottom_toBottomOf="@id/settings_country_description"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:civ_border_color="@color/blue"
+            android:layout_marginEnd="@dimen/margin_medium"
+            app:civ_border_width="1dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

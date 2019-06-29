@@ -12,6 +12,10 @@ import me.rahulsengupta.news.core.retrofit.RetrofitFactory.createCountryRetrofit
 import me.rahulsengupta.news.core.retrofit.RetrofitFactory.createIconFinderRetrofitClient
 import me.rahulsengupta.news.core.retrofit.RetrofitFactory.createNewsRetrofitClient
 import me.rahulsengupta.news.home.*
+import me.rahulsengupta.news.home.api.HomeApi
+import me.rahulsengupta.news.home.api.HomeApiImpl
+import me.rahulsengupta.news.home.api.IconFinderApi
+import me.rahulsengupta.news.home.api.IconFinderApiImpl
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

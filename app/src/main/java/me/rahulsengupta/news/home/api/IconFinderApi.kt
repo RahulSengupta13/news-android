@@ -1,4 +1,4 @@
-package me.rahulsengupta.news.home
+package me.rahulsengupta.news.home.api
 
 import me.rahulsengupta.network.IconFinderEndpoints
 import me.rahulsengupta.network.responses.IconFinderResponse

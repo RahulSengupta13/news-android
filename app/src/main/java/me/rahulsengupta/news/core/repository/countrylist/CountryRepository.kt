@@ -14,8 +14,8 @@ import org.koin.core.inject
 
 interface ICountryRepository {
     fun updateCountries(countryEntities: List<CountryEntity>)
-    fun getSelectedCountry(): LiveData<CountryEntity>
     fun getCountries(): LiveData<List<CountryEntity>>
+    fun getCountriesList(): List<CountryEntity>?
     fun fetchCountries()
 }
 
@@ -25,22 +25,14 @@ class CountryRepository(context: Context) : ICountryRepository, SafeCoroutineSco
     private val countryListDb: ICountryListDb by inject()
 
     private val countryListLiveData = MutableLiveData<List<CountryEntity>>()
-    private val selectedCountryLiveData = MutableLiveData<CountryEntity>()
-
-    init {
-        launch(Dispatchers.IO) {
-            countryListDb.getSelectedCountry()?.let { selectedCountryLiveData.postValue(it) }
-        }
-    }
-
-    override fun getSelectedCountry() = selectedCountryLiveData
 
     override fun getCountries() = countryListLiveData
+
+    override fun getCountriesList() = countryListLiveData.value
 
     override fun updateCountries(countryEntities: List<CountryEntity>) {
         launch(Dispatchers.IO) {
             countryListDb.saveCountries(countryEntities)
-            countryListDb.getSelectedCountry()?.let { selectedCountryLiveData.postValue(it) }
         }
     }
 
@@ -63,6 +55,5 @@ class CountryRepository(context: Context) : ICountryRepository, SafeCoroutineSco
                 countryListLiveData.postValue(localCountryList)
             }
         }
-
     }
 }

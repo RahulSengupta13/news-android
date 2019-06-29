@@ -15,4 +15,6 @@
     <string name="entertainment">Entertainment</string>
     <string name="business">Business</string>
     <string name="add_more">+</string>
+    <string name="country">Country</string>
+    <string name="settings_country_description">Select a country for preferred source of news.</string>
 </resources>

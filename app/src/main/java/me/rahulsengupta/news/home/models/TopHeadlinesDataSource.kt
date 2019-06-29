@@ -2,7 +2,7 @@ package me.rahulsengupta.news.home.models
 
 import androidx.paging.PageKeyedDataSource
 import me.rahulsengupta.news.core.retrofit.RetrofitResult
-import me.rahulsengupta.news.home.HomeApi
+import me.rahulsengupta.news.home.api.HomeApi
 import me.rahulsengupta.news.home.HomeLogic.Companion.toNewsViewModel
 import org.koin.core.KoinComponent
 import org.koin.core.inject
